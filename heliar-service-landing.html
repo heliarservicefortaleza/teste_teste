@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Heliar Service — Troca de Baterias com Padrão de Fábrica</title>
+  <meta name="description" content="Heliar Service: atendimento especializado direto da fábrica. Troca de baterias, check-up elétrico e instalação grátis. Agende pela web ou WhatsApp.">
+  <meta name="author" content="Heliar Service">
+  <meta name="theme-color" content="#0B8F3C">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Heliar Service — Energia de fábrica, confiança total">
+  <meta property="og:description" content="Troca de baterias Heliar com instalação e check-up grátis. Atendimento rápido e garantia nacional.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://exemplo.com/heliar-service">
+  <meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=Heliar+Service">
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><rect width=%27100%27 height=%27100%27 fill=%27%230B8F3C%27/><text x=%2750%27 y=%2758%27 font-size=%2756%27 text-anchor=%27middle%27 fill=%27white%27>H</text></svg>">
+  <style>
+    :root{
+      --brand:#0B8F3C; /* verde Heliar aproximado */
+      --brand-dark:#086f2f;
+      --brand-2:#1E1E1E;
+      --bg:#F5F7F5;
+      --text:#1A1A1A;
+      --muted:#6B7280;
+      --white:#ffffff;
+      --accent:#FFD900; /* amarelo de destaque */
+      --radius:14px;
+      --shadow: 0 10px 20px rgba(0,0,0,.08);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,'Helvetica Neue','Noto Sans','Liberation Sans',Arial,sans-serif;line-height:1.5}
+    a{color:var(--brand);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{width:min(1120px,92%);margin-inline:auto}
+    .btn{display:inline-flex;gap:.6rem;align-items:center;justify-content:center;border:0;border-radius:999px;padding:.95rem 1.25rem;font-weight:700;cursor:pointer;transition:.2s box-shadow,.2s transform}
+    .btn:focus{outline:3px solid rgba(11,143,60,.25);outline-offset:2px}
+    .btn-primary{background:var(--brand);color:var(--white)}
+    .btn-primary:hover{box-shadow:0 8px 16px rgba(11,143,60,.25);transform:translateY(-1px)}
+    .btn-secondary{background:var(--white);color:var(--brand);border:2px solid var(--brand)}
+    .badge{display:inline-block;background:var(--accent);color:#1E1E1E;padding:.25rem .6rem;border-radius:999px;font-weight:800;font-size:.75rem;letter-spacing:.02em}
+    header.site{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.65);backdrop-filter:saturate(180%) blur(10px);border-bottom:1px solid #e8ece8}
+    header .row{display:flex;align-items:center;justify-content:space-between;padding:.75rem 0}
+    .brand{display:flex;gap:.75rem;align-items:center}
+    .brand .logo{width:42px;height:42px;border-radius:12px;background:var(--brand);display:grid;place-items:center;color:#fff;font-weight:900}
+    .brand b{font-size:1.05rem}
+    nav a{font-weight:600;margin-inline:.75rem;color:#2a2a2a}
+    .hero{padding:4rem 0 2.5rem;background:linear-gradient(180deg,#ffffff, #f1f7f1)}
+    .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;align-items:center}
+    .hero h1{font-size:clamp(1.9rem, 2.4vw + 1rem, 3rem);line-height:1.15;margin:.5rem 0}
+    .hero p{font-size:1.1rem;color:#374151;margin:0 0 1.25rem}
+    .hero .card{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:1.25rem}
+    .hero .list{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin:1rem 0}
+    .hero .list span{background:#fff;border:1px solid #e7ece7;border-radius:12px;padding:.65rem .8rem;font-weight:600}
+    .form{display:grid;gap:.6rem;margin-top:.5rem}
+    .form label{font-weight:700;font-size:.9rem}
+    .form input,.form select,.form textarea{width:100%;border:1.5px solid #dfe5df;border-radius:12px;padding:.85rem;font-size:1rem}
+    .form .row{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+    .trust{display:flex;gap:1.2rem;flex-wrap:wrap;align-items:center;margin-top:1rem}
+    .trust small{color:var(--muted)}
+    section{padding:3rem 0}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+    .card{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:1.2rem}
+    .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+    .kpi{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:1.2rem;text-align:center}
+    .kpi b{font-size:1.6rem;display:block}
+    .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+    .step{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:1.2rem}
+    .cta{background:linear-gradient(180deg, var(--brand), var(--brand-dark));color:#fff;border-radius:20px;padding:2rem;display:grid;gap:1rem;align-items:center}
+    .cta .row{display:grid;grid-template-columns:1.5fr .5fr;gap:1rem;align-items:center}
+    footer{padding:2.5rem 0;background:#0f2015;color:#dbe7de}
+    footer a{color:#dbe7de}
+    footer .cols{display:grid;grid-template-columns:2fr 1fr 1fr;gap:1rem}
+    /* responsive */
+    @media (max-width: 960px){
+      .hero .wrap{grid-template-columns:1fr}
+      .hero .list{grid-template-columns:1fr}
+      .form .row{grid-template-columns:1fr}
+      .grid-3{grid-template-columns:1fr}
+      .kpis{grid-template-columns:repeat(2,1fr)}
+      .steps{grid-template-columns:repeat(2,1fr)}
+      .cta .row{grid-template-columns:1fr}
+      footer .cols{grid-template-columns:1fr}
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AutoRepair",
+    "name": "Heliar Service",
+    "brand": {"@type":"Brand","name":"Heliar"},
+    "description": "Troca de baterias Heliar com instalação e check-up grátis. Atendimento rápido e garantia nacional.",
+    "url": "https://exemplo.com/heliar-service",
+    "logo": "https://via.placeholder.com/256.png?text=Heliar+Service",
+    "telephone": "+55-85-99999-0000",
+    "address": {
+      "@type":"PostalAddress",
+      "addressLocality":"Fortaleza",
+      "addressRegion":"CE",
+      "postalCode":"60000-000",
+      "addressCountry":"BR"
+    },
+    "openingHours": "Mo-Su 08:00-20:00",
+    "areaServed": "Fortaleza e Região Metropolitana",
+    "sameAs": ["https://instagram.com/heliarservice"]
+  }
+  </script>
+</head>
+<body>
+  <header class="site">
+    <div class="container row">
+      <div class="brand" aria-label="Heliar Service">
+        <div class="logo" aria-hidden="true">H</div>
+        <div>
+          <b>Heliar Service</b><br>
+          <small>Energia de fábrica, confiança total</small>
+        </div>
+      </div>
+      <nav aria-label="principal">
+        <a href="#servicos">Serviços</a>
+        <a href="#como-funciona">Como funciona</a>
+        <a href="#garantia">Garantia</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+      <div class="container wrap">
+        <div>
+          <span class="badge">Direto da fábrica Heliar</span>
+          <h1>Troca de bateria <u>rápida</u> e <u>garantida</u> com padrão de fábrica.</h1>
+          <p>Atendimento especializado por técnicos certificados Heliar. Instalação e check-up elétrico <b>grátis</b>. Garantia nacional com emissão de nota.</p>
+
+          <div class="list" role="list">
+            <span role="listitem">🚚 Entrega em até 60 min*</span>
+            <span role="listitem">🔧 Instalação gratuita</span>
+            <span role="listitem">🛡️ Garantia nacional</span>
+            <span role="listitem">📊 Check-up do sistema elétrico</span>
+          </div>
+
+          <div class="trust">
+            <small>*Consulte disponibilidade por região. Fortaleza e RMF.</small>
+          </div>
+
+          <div style="display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1rem">
+            <a class="btn btn-primary" href="https://wa.me/5585999990000?text=Olá!%20Quero%20trocar%20a%20bateria%20do%20meu%20carro%20com%20a%20Heliar%20Service." rel="noopener" target="_blank" aria-label="Falar no WhatsApp">
+              📲 Falar no WhatsApp
+            </a>
+            <a class="btn btn-secondary" href="#form" aria-label="Pedir orçamento online">🧾 Pedir orçamento</a>
+          </div>
+        </div>
+
+        <aside class="card" aria-label="Formulário rápido de orçamento">
+          <h2 style="margin:0 0 .4rem">Faça seu orçamento online</h2>
+          <p style="color:var(--muted);margin:0 0 .8rem">Responda 3 passos e retornamos em minutos.</p>
+          <form class="form" id="form" onsubmit="event.preventDefault(); alert('Obrigado! Recebemos seu pedido. Entraremos em contato.');">
+            <label for="veiculo">Modelo do veículo</label>
+            <input id="veiculo" name="veiculo" placeholder="Ex.: Fiat Palio 2010 1.0" required>
+
+            <div class="row">
+              <div>
+                <label for="uso">Uso do veículo</label>
+                <select id="uso" name="uso">
+                  <option>Particular</option>
+                  <option>Motorista de app</option>
+                  <option>Empresarial/Frota</option>
+                </select>
+              </div>
+              <div>
+                <label for="local">Bairro/Local</label>
+                <input id="local" name="local" placeholder="Ex.: Aldeota" required>
+              </div>
+            </div>
+
+            <label for="nome">Seu nome</label>
+            <input id="nome" name="nome" placeholder="Seu nome" required>
+
+            <label for="contato">Contato (WhatsApp)</label>
+            <input id="contato" name="contato" inputmode="tel" placeholder="(85) 9 9999-0000" required>
+
+            <button class="btn btn-primary" type="submit">Solicitar orçamento</button>
+            <small style="color:var(--muted)">Ao enviar, você concorda com nossa <a href="#privacidade">Política de Privacidade</a>.</small>
+          </form>
+        </aside>
+      </div>
+    </section>
+
+    <!-- KPIs / PROVAS -->
+    <section aria-label="Provas sociais e indicadores">
+      <div class="container kpis">
+        <div class="kpi"><b>+17 anos</b><small>de experiência em baterias</small></div>
+        <div class="kpi"><b>4.9★</b><small>avaliação média dos clientes</small></div>
+        <div class="kpi"><b>60 min</b><small>média de entrega na cidade</small></div>
+        <div class="kpi"><b>Garantia</b><small>nacional Heliar</small></div>
+      </div>
+    </section>
+
+    <!-- SERVIÇOS -->
+    <section id="servicos">
+      <div class="container">
+        <h2>Serviços com padrão Heliar</h2>
+        <div class="grid-3" role="list">
+          <div class="card" role="listitem">
+            <h3>Troca de Bateria</h3>
+            <p>Substituição rápida e segura, com testes de carga e alternador. Instalação gratuita e descarte ambientalmente correto.</p>
+          </div>
+          <div class="card" role="listitem">
+            <h3>Check-up Elétrico</h3>
+            <p>Diagnóstico completo do sistema de partida e recarga, garantindo máxima vida útil da bateria e segurança.</p>
+          </div>
+          <div class="card" role="listitem">
+            <h3>Atendimento em Domicílio</h3>
+            <p>Vamos até você: residência, trabalho ou onde o veículo estiver. Cobertura em Fortaleza e região metropolitana.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMO FUNCIONA -->
+    <section id="como-funciona" aria-label="Como funciona">
+      <div class="container">
+        <h2>Como funciona</h2>
+        <div class="steps">
+          <div class="step"><b>1. Solicite</b><br><small>Pelo WhatsApp ou formulário.</small></div>
+          <div class="step"><b>2. Confirmamos</b><br><small>Preço, garantia e horário.</small></div>
+          <div class="step"><b>3. Entregamos</b><br><small>Técnico certificado até você.</small></div>
+          <div class="step"><b>4. Check-up & Nota</b><br><small>Teste final + nota fiscal.</small></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DIFERENCIAIS -->
+    <section aria-label="Diferenciais">
+      <div class="container">
+        <h2>Por que escolher a Heliar Service?</h2>
+        <div class="grid-3">
+          <div class="card"><b>Direto da fábrica</b><p>Atendimento autorizado com peças originais e garantia nacional.</p></div>
+          <div class="card"><b>Profissionais certificados</b><p>Time treinado nos padrões de qualidade Heliar.</p></div>
+          <div class="card"><b>Transparência total</b><p>Orçamento claro, sem surpresas, com emissão de nota e garantia.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GARANTIA & FAQ -->
+    <section id="garantia" aria-label="Garantia e Perguntas Frequentes">
+      <div class="container">
+        <h2>Garantia & Perguntas Frequentes</h2>
+        <div class="grid-3">
+          <div class="card">
+            <h3>Garantia Heliar</h3>
+            <p>Baterias com garantia nacional, válida em toda a rede de assistência autorizada. A emissão de nota fiscal acompanha a instalação.</p>
+          </div>
+          <div class="card">
+            <h3>Quanto tempo leva?</h3>
+            <p>Em média, realizamos a entrega e instalação em até 60 minutos após a confirmação, conforme disponibilidade na sua região.</p>
+          </div>
+          <div class="card">
+            <h3>Quais veículos atendem?</h3>
+            <p>Carros, motos e veículos utilitários. Frotas empresariais contam com condições especiais e atendimento programado.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section aria-label="Chamada para ação">
+      <div class="container cta">
+        <div class="row">
+          <div>
+            <h2 style="margin:0">Precisa trocar a bateria hoje?</h2>
+            <p style="margin:.25rem 0 0">Fale com um especialista agora mesmo. Atendimento rápido, instalação grátis e garantia de fábrica.</p>
+          </div>
+          <div style="display:flex;gap:.6rem;align-items:center;justify-content:flex-end;flex-wrap:wrap">
+            <a class="btn btn-secondary" href="#form">Pedir orçamento</a>
+            <a class="btn btn-primary" href="https://wa.me/5585999990000?text=Olá!%20Quero%20trocar%20a%20bateria%20do%20meu%20carro%20com%20a%20Heliar%20Service." target="_blank" rel="noopener">WhatsApp agora</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contato">
+    <div class="container cols">
+      <div>
+        <h3 style="margin-top:0">Heliar Service</h3>
+        <p>Energia de fábrica, confiança total. Troca de baterias com padrão autorizado Heliar, garantia nacional e instalação grátis.</p>
+        <p id="privacidade"><small>© 2025 Heliar Service. Todos os direitos reservados. <a href="#">Política de Privacidade</a></small></p>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <ul style="list-style:none;padding:0;margin:0">
+          <li>📞 <a href="tel:+5585999990000">(85) 9 9999-0000</a></li>
+          <li>📍 Fortaleza — CE</li>
+          <li>⏰ 08:00 às 20:00 (seg a dom)</li>
+          <li>📩 <a href="mailto:contato@heliarservice.com.br">contato@heliarservice.com.br</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Redes</h4>
+        <ul style="list-style:none;padding:0;margin:0">
+          <li>📸 <a href="https://instagram.com/heliarservice" target="_blank" rel="noopener">Instagram</a></li>
+          <li>💬 <a href="https://wa.me/5585999990000" target="_blank" rel="noopener">WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Analytics placeholder -->
+  <script>
+    // Substitua pela sua tag (GA4/Meta Pixel/etc.)
+    window.addEventListener('DOMContentLoaded',()=>{
+      console.log('Heliar Service LP carregada');
+    });
+  </script>
+</body>
+</html>
